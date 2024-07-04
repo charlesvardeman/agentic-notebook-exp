@@ -1,0 +1,24 @@
+[project]
+name = "agentic-notebook-exp"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Charles Vardeman", email = "charles.vardeman@gmail.com"},
+]
+dependencies = [
+    "nbdev>=2.3.25",
+    "setuptools>=70.2.0",
+    "pretzelai>=4.2.7",
+    "openai>=1.35.10",
+    "python-dotenv>=1.0.1",
+    "rdflib>=7.0.0",
+    "pyshacl>=0.26.0",
+    "rocrate>=0.10.0",
+]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false

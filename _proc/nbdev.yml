@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "agentic-notebook-exp"
+  site-url: "https://charlesvardeman.github.io/agentic-notebook-exp"
+  description: "Experiments with agents for scientific notebooks"
+  repo-branch: main
+  repo-url: "https://github.com/charlesvardeman/agentic-notebook-exp"
