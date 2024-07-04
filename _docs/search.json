@@ -1,0 +1,42 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Agents for scientific notebooks",
+    "section": "",
+    "text": "Experiments on Agent ready jupyter notebooks using existing tools: - Pretzel AI - RO-Crate - nbdev - rdflib - ESIP Science on Schema.org\nInspired by Microsoft GraphRAG",
+    "crumbs": [
+      "Agents for scientific notebooks"
+    ]
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "Agents for scientific notebooks",
+    "section": "Install",
+    "text": "Install\nThis repository uses PDM in a .venv folder. 1. Install pdm 2. Set pdm to use .venv\npdm config python.\n\nInstall depenencies using pdm\n\npdm install agentic_notebook_exp\nPDM will install Prezel AI and it’s version of Jupyter lab. You can start prezel lab with:\npretzel lab",
+    "crumbs": [
+      "Agents for scientific notebooks"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "Agents for scientific notebooks",
+    "section": "How to use",
+    "text": "How to use\nFill me in please! Don’t forget code examples:",
+    "crumbs": [
+      "Agents for scientific notebooks"
+    ]
+  },
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "foo\n\n foo ()",
+    "crumbs": [
+      "core"
+    ]
+  }
+]
