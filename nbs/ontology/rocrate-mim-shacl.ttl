@@ -1,0 +1,33 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ro: <http://purl.org/wf4ever/ro#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+:ROCrateShape a sh:NodeShape ;
+  sh:targetClass ro:Crate ;
+  sh:property [
+    sh:path ro:rootFolder ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class ro:Folder ;
+  ] ;
+  sh:property [
+    sh:path ro:manifest ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class ro:Manifest ;
+  ] .
+
+:ManifestShape a sh:NodeShape ; 
+  sh:targetClass ro:Manifest ;
+  sh:property [
+    sh:path dcterms:conformsTo ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:hasValue <https://w3id.org/ro/crate/1.1> ;
+  ] ;
+  sh:property [
+    sh:path ro:aggregates ;
+    sh:minCount 1 ;
+    sh:class ro:AggregatedResource ;
+  ] .

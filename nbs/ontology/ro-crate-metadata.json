@@ -1,0 +1,26 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "File",
+            "author": {
+                "@id": "https://orcid.org/0000-0003-4091-6059",
+                "name": "Charles F. Vardeman II"
+            },
+            "datePublished": "2024-07-11",
+            "description": "This is a sample document",
+            "name": "My Document"
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.1"
+            }
+        }
+    ]
+}

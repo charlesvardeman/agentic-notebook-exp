@@ -1,0 +1,311 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.com/ns#> .
+
+ex:PIDinstSchema a sh:NodeShape ;
+  sh:closed true ;
+  sh:property [
+    sh:path ex:Identifier ;
+    sh:node ex:IdentifierShape ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ex:SchemaVersion ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:hasValue "1.0" ;
+  ] ;
+  sh:property [
+    sh:path ex:LandingPage ;
+    sh:nodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:pattern "^http(s)?:(\\/\\/([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?$" ;
+  ] ;
+  sh:property [
+    sh:path ex:Name ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ex:Owner ; 
+    sh:node ex:OwnerShape ;
+    sh:minCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ex:Manufacturer ;
+    sh:node ex:ManufacturerShape ;
+    sh:minCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ex:Model ;
+    sh:node ex:ModelShape ;
+  ] ;
+  sh:property [
+    sh:path ex:Description ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path ex:InstrumentType ;
+    sh:node ex:InstrumentTypeShape ;
+  ] ;
+  sh:property [
+    sh:path ex:MeasuredVariable ;
+    sh:datatype xsd:string ;
+    sh:uniqueLang true ;
+  ] ;
+  sh:property [
+    sh:path ex:Date ;
+    sh:node ex:DateShape ;
+  ] ;
+  sh:property [
+    sh:path ex:RelatedIdentifier ;
+    sh:node ex:RelatedIdentifierShape ;
+  ] ;
+  sh:property [
+    sh:path ex:AlternateIdentifier ;
+    sh:node ex:AlternateIdentifierShape ;
+  ] .
+
+ex:IdentifierShape a sh:NodeShape ;
+  sh:closed true ;
+  sh:property [
+    sh:path ex:identifierValue ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ex:identifierType ;
+    sh:in ( "ARK" "arXiv" "bibcode" "DOI" "EAN13" "EISSN" "Handle" "IGSN" "ISBN" "ISSN" "ISTC" "LISSN" "LSID" "PMID" "PURL" "UPC" "URL" "URN" "w3id" ) ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] .
+
+ex:OwnerShape a sh:NodeShape ;  
+  sh:closed true ;
+  sh:property [
+    sh:path ex:ownerName ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ex:ownerContact ;
+    sh:datatype xsd:string ;
+    sh:pattern "^\\S+@\\S+\\.\\S+$" ;
+  ] ;
+  sh:property [
+    sh:path ex:ownerIdentifier ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path ex:ownerIdentifierType ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:xone (
+    [ sh:property [
+        sh:path ex:ownerIdentifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+      ] ;
+      sh:property [
+        sh:path ex:ownerIdentifierType ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+      ] ;
+    ]
+    [ sh:property [
+        sh:path ex:ownerIdentifier ;
+        sh:maxCount 0 ;
+      ] ;
+      sh:property [
+        sh:path ex:ownerIdentifierType ;
+        sh:maxCount 0 ;
+      ] ;
+    ]
+  ) .
+
+ex:ManufacturerShape a sh:NodeShape ;
+  sh:closed true ;
+  sh:property [
+    sh:path ex:manufacturerName ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ex:manufacturerIdentifier ; 
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path ex:manufacturerIdentifierType ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:xone (
+    [ sh:property [
+        sh:path ex:manufacturerIdentifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+      ] ;
+      sh:property [
+        sh:path ex:manufacturerIdentifierType ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+      ] ;
+    ]
+    [ sh:property [
+        sh:path ex:manufacturerIdentifier ;
+        sh:maxCount 0 ;
+      ] ;
+      sh:property [
+        sh:path ex:manufacturerIdentifierType ;
+        sh:maxCount 0 ;
+      ] ;
+    ]
+  ) .
+
+ex:ModelShape a sh:NodeShape ;
+  sh:closed true ;
+  sh:property [
+    sh:path ex:modelName ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ex:modelIdentifier ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path ex:modelIdentifierType ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:xone (
+    [ sh:property [
+        sh:path ex:modelIdentifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+      ] ;
+      sh:property [
+        sh:path ex:modelIdentifierType ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+      ] ;
+    ]
+    [ sh:property [
+        sh:path ex:modelIdentifier ;
+        sh:maxCount 0 ;
+      ] ;
+      sh:property [
+        sh:path ex:modelIdentifierType ;
+        sh:maxCount 0 ;
+      ] ;
+    ]
+  ) .
+
+ex:InstrumentTypeShape a sh:NodeShape ;
+  sh:closed true ;
+  sh:property [
+    sh:path ex:instrumentTypeName ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ex:instrumentTypeIdentifier ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path ex:instrumentTypeIdentifierType ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:xone (
+    [ sh:property [
+        sh:path ex:instrumentTypeIdentifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+      ] ;
+      sh:property [
+        sh:path ex:instrumentTypeIdentifierType ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+      ] ;
+    ]
+    [ sh:property [
+        sh:path ex:instrumentTypeIdentifier ;
+        sh:maxCount 0 ;
+      ] ;
+      sh:property [
+        sh:path ex:instrumentTypeIdentifierType ;
+        sh:maxCount 0 ;
+      ] ;
+    ]
+  ) .
+
+ex:DateShape a sh:NodeShape ;
+  sh:closed true ;
+  sh:property [
+    sh:path ex:dateValue ;
+    sh:or ( 
+      [ sh:datatype xsd:gYear ]
+      [ sh:datatype xsd:gYearMonth ]
+      [ sh:datatype xsd:date ]
+      [ sh:datatype xsd:dateTime ]
+    ) ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ex:dateType ;
+    sh:in ( "Commissioned" "DeCommissioned" ) ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] .
+
+ex:RelatedIdentifierShape a sh:NodeShape ;
+  sh:closed true ;
+  sh:property [
+    sh:path ex:relatedIdentifierName ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path ex:relationType ;
+    sh:in ( "IsDescribedBy" "IsNewVersionOf" "IsPreviousVersionOf" "HasComponent" "IsComponentOf" "References" "HasMetadata" "WasUsedIn" "IsIdenticalTo" "IsAttachedTo" ) ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ex:relatedIdentifierValue ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ex:relatedIdentifierType ;
+    sh:in ( "ARK" "arXiv" "bibcode" "DOI" "EAN13" "EISSN" "Handle" "IGSN" "ISBN" "ISSN" "ISTC" "LISSN" "LSID" "PMID" "PURL" "UPC" "URL" "URN" "w3id" ) ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] .
+
+ex:AlternateIdentifierShape a sh:NodeShape ;
+  sh:closed true ;
+  sh:property [
+    sh:path ex:alternateIdentifierName ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path ex:alternateIdentifierValue ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path ex:alternateIdentifierType ;
+    sh:in ( "SerialNumber" "InventoryNumber" "Other" ) ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] .

@@ -1,0 +1,82 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@type": "CreativeWork",
+  "author": "Josiah Carberry",
+  "instrument": {
+    "@id": "#HRS750",
+    "@type": "Thing",
+    "name": "HRS750",
+    "manufacturer": "Teledyne Princeton Instruments"
+  },
+  "hasPart": [
+    {
+      "@id": "#instr-owner",
+      "@type": "Organization",
+      "name": "NSF facility MagLab",
+      "url": "https://ror.org/03s53g630"
+    },
+    {
+      "@type": "Person",
+      "name": "Josiah Carberry",
+      "url": "https://orcid.org/0000-0002-1825-0097",
+      "ownerOf": {
+        "@id": "#instr-owner"
+      }
+    },
+    {
+      "@id": "#lightfield",
+      "@type": "SoftwareApplication",
+      "name": "LightField",
+      "author": "Teledyne Princeton Instruments",
+      "supports": [
+        "#HRS750",
+        "#IsoPlane"
+      ],
+      "sameAs": "https://www.princetoninstruments.com/products/software-family/lightfield"
+    }
+  ],
+  "distribution": [
+    {
+      "@type": "Dataset",
+      "name": "PL WSe2-MoSe2",
+      "contentUrl": "PL_WSe2-MoSe2_00.0T_to_05.2T_10K_633nm-100uW_720nm_30um_2min_0.65NA.SPE",
+      "experimentType": "PL",
+      "sampleShortName": "WSe2-MoSe2",
+      "magneticField": "0T to 5.2T",
+      "temperature": "10K",
+      "lightSource": "633nm-100uW",
+      "centralWlEnergy": "720nm",
+      "slitValue": "30um",
+      "acquisitionTime": "2min",
+      "objectiveNa": "0.65NA"
+    },
+    {
+      "@type": "Dataset",
+      "name": "Ra CsPr",
+      "contentUrl": "Ra_CsPr_30T_7.2K_532nm-2mW_550cm-1_30um_3x2min_0.82NA.SPE",
+      "experimentType": "Ra",
+      "sampleShortName": "CsPr",
+      "magneticField": "30T",
+      "temperature": "7.2K",
+      "lightSource": "532nm-2mW",
+      "centralWlEnergy": "550cm-1",
+      "slitValue": "30um",
+      "acquisitionTime": "3x2min",
+      "objectiveNa": "0.82NA"
+    },
+    {
+      "@type": "Dataset",
+      "name": "Re InSe",
+      "contentUrl": "Re_InSe_0T_5K_SC-20%600meV_50um_5sec_0.65NA_Gate_Sweep_-10V_to_+20V.SPE",
+      "experimentType": "Re",
+      "sampleShortName": "InSe",
+      "magneticField": "0T",
+      "temperature": "5K",
+      "lightSource": "SC-20%600meV",
+      "slitValue": "50um",
+      "acquisitionTime": "5sec",
+      "objectiveNa": "0.65NA",
+      "otherConditions": "Gate Sweep -10V to +20V"
+    }
+  ]
+}

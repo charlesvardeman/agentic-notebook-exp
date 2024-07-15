@@ -1,0 +1,42 @@
+{
+    "@context": [
+      "https://schema.org/version/latest/schemaorg-current-https.jsonld",
+      {
+        "@vocab": "https://w3id.org/ro/crate#",
+        "ro": "https://w3id.org/ro/crate#",
+        
+        "File": "schema:MediaObject",
+        "path": "schema:contentUrl",
+        "Journal": "schema:Periodical",
+        "cite-as": "https://www.w3.org/ns/iana/link-relations/relation#cite-as",
+        
+        "hasFile": "http://pcdm.org/models#hasFile",
+        "hasMember": "http://pcdm.org/models#hasMember",
+        "RepositoryCollection": "http://pcdm.org/models#Collection",
+        "RepositoryObject": "http://pcdm.org/models#Object",
+        
+        "ComputationalWorkflow": "https://bioschemas.org/ComputationalWorkflow",
+        "input": "https://bioschemas.org/ComputationalWorkflow#input",
+        "output": "https://bioschemas.org/ComputationalWorkflow#output",
+        "FormalParameter": "https://bioschemas.org/FormalParameter",
+        
+        "funding": "schema:funding",
+        "wasDerivedFrom": "http://www.w3.org/ns/prov#wasDerivedFrom",
+        
+        "importedFrom": "http://purl.org/pav/importedFrom",
+        "importedOn": "http://purl.org/pav/importedOn",
+        "importedBy": "http://purl.org/pav/importedBy",
+        "retrievedFrom": "http://purl.org/pav/retrievedFrom",
+        "retrievedOn": "http://purl.org/pav/retrievedOn",
+        "retrievedBy": "http://purl.org/pav/retrievedBy",
+        
+        "conformsTo": "http://purl.org/dc/terms/conformsTo",
+        
+        "DataEntity": "ro:DataEntity",
+        "ContextualEntity": "ro:ContextualEntity",
+        "MetadataFile": "ro:MetadataFile",
+        "rootDataEntity": "ro:rootDataEntity",
+        "fileFormat": "ro:fileFormat"
+      }
+    ]
+  }

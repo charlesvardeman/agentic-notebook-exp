@@ -1,0 +1,39 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "datePublished": "2024-07-11T15:34:57+00:00",
+            "hasPart": [
+                {
+                    "@id": "PL_WSe2-MoSe2_00.0T_to_05.2T_10K_633nm-100uW_720nm_30um_2min_0.65NA.SPE"
+                },
+                {
+                    "@id": "Ra_CsPr_30T_7.2K_532nm-2mW_550cm-1_30um_3x2min_0.82NA.SPE"
+                },
+                {
+                    "@id": "Re_InSe_0T_5K_SC-20%600meV_50um_5sec_0.65NA_Gate_Sweep_-10V_to_+20V.SPE"
+                }
+            ]
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.1"
+            }
+        },
+        {
+            "@id": "https://ror.org/03s53g630",
+            "@type": "Thing",
+            "name": "NSF facility MagLab"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-1825-0097",
+            "@type": "Thing",
+            "name": "Josiah Carberry",
+            "ownerOf": 

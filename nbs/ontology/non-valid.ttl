@@ -1,0 +1,24 @@
+@prefix ex: <http://example.com/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:instrument1 a ex:PIDinstSchema ;
+  ex:Identifier [
+    ex:identifierValue "123" ;
+    ex:identifierType "InvalidType" ;
+  ] ;
+  ex:SchemaVersion "2.0" ;
+  ex:LandingPage "not-a-valid-url" ;
+  ex:Name "Example Instrument" ;
+  ex:Owner [
+    ex:ownerName "Example Owner" ;
+    ex:ownerIdentifier "owner-123" ;
+  ] ;
+  ex:Manufacturer [
+    ex:manufacturerName "Example Manufacturer" ;
+    ex:manufacturerIdentifier "mfr-456" ;
+  ] ;
+  ex:MeasuredVariable "Temperature", "Pressure" ;
+  ex:Date [
+    ex:dateValue "invalid-date" ;
+    ex:dateType "Installed" ;
+  ] .
